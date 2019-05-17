@@ -55,10 +55,5 @@ namespace PreferredCustomerPolicy.Sagas
             }
             return false;
         }
-
-    }
-
-    public class CalendarYearHasStarted
-    {
     }
 }

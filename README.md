@@ -10,15 +10,8 @@ The code example uses [NServiceBus](https://docs.particular.net/nservicebus/) fo
 
 ### First Implementation
 
-The [BeforeTimeouts](https://github.com/indualagarsamy/Presentations/tree/master/evolving-with-changing-requirements/src/BeforeTimeouts) folder contains an example of a Saga that does not use timeouts.  
+The [BeforeTimeouts](https://github.com/indualagarsamy/saga-pattern/tree/master/src/BeforeTimeouts) folder contains an example of a Saga that does not use timeouts.  
 
 ### Second Implementation
 
-The [CompleteSolutionWithTimeouts](https://github.com/indualagarsamy/Presentations/tree/master/evolving-with-changing-requirements/src/CompleteSolutionWithTimeouts) folder contains an example of a Saga that uses timeouts.
-
-## Explore DDD 2018
-
-* [Talk Recording](https://www.youtube.com/watch?v=pk4GrmWtjMk)
-
-* [Slides](https://github.com/indualagarsamy/Presentations/blob/master/evolving-with-changing-requirements/exploreddd-2018/changing-requirements.pdf)
-
+The [CompleteSolutionWithTimeouts](https://github.com/indualagarsamy/saga-pattern/tree/master/src/CompleteSolutionWithTimeouts) folder contains an example of a Saga that uses timeouts.
