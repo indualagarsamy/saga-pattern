@@ -6,12 +6,12 @@ using Messages;
 namespace PreferredCustomerPolicy.Sagas
 {
 
-    class PreferredCutomerGoldPolicy : Saga<PreferredCutomerGoldPolicyData>, 
+    class PreferredCustomerGoldPolicy : Saga<PreferredCustomerGoldPolicyData>, 
         IAmStartedByMessages<FlightPlanWasAdded>,
         IAmStartedByMessages<CustomerWasBilled>
     {
 
-        protected override void ConfigureHowToFindSaga(SagaPropertyMapper<PreferredCutomerGoldPolicyData> mapper)
+        protected override void ConfigureHowToFindSaga(SagaPropertyMapper<PreferredCustomerGoldPolicyData> mapper)
         {
             mapper.ConfigureMapping<FlightPlanWasAdded>(message => message.CustomerId)
                 .ToSaga(data => data.CustomerId);
