@@ -1,4 +1,4 @@
-## Evolving With The Changing Requirements - Using DDD and Messaging
+## Evolving With The Changing Requirements - Using DDD and Saga Message Pattern
 
 Modeling business requirements and policies is a tricky thing. Especially when those requirements just keep on changing. Sure, we've all written code before to model requirements, but how can we achieve the dream of evolving the code and at the same time be aligned with the business? After all, isn't that the promise of Domain Driven Design?
 
