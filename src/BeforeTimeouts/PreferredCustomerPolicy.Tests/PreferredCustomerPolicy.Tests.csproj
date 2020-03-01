@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="NServiceBus" Version="7.2.3" />
+    <PackageReference Include="NServiceBus.Testing" Version="7.2.0" />
+    <PackageReference Include="NUnit" Version="3.*" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.*" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AmericanAirlines.PreferredCustomerPolicy\PreferredCustomerPolicy.csproj" />
+    <ProjectReference Include="..\Events\Events.csproj" />
+  </ItemGroup>
+
+</Project>

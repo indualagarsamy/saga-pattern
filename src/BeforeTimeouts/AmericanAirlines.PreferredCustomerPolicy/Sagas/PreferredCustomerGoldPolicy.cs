@@ -6,7 +6,7 @@ using Events;
 namespace PreferredCustomerPolicy.Sagas
 {
 
-    class PreferredCustomerGoldPolicy : Saga<PreferredCustomerGoldPolicyData>, 
+    public class PreferredCustomerGoldPolicy : Saga<PreferredCustomerGoldPolicyData>,
         IAmStartedByMessages<FlightPlanWasAdded>,
         IAmStartedByMessages<CustomerWasBilled>
     {

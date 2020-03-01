@@ -1,0 +1,65 @@
+﻿using System;
+using System.Threading.Tasks;
+using NUnit.Framework;
+using NServiceBus.Testing;
+using PreferredCustomerPolicy.Sagas;
+using Events;
+
+namespace PreferredCustomerPolicy.Tests
+{
+    [TestFixture]
+    public class PreferredStatusGoldTests
+    {
+        PreferredCustomerGoldPolicy saga;
+        TestableMessageHandlerContext context;
+
+        [SetUp]
+        public void Setup()
+        {
+            saga = new PreferredCustomerGoldPolicy
+            {
+                Data = new PreferredCustomerGoldPolicyData()
+            };
+            context = new TestableMessageHandlerContext();
+        }
+
+        [Test]
+        public async Task ShouldMakeCustomersPreferredStatusToGold()
+        {
+            var customerId = Guid.NewGuid();
+            FlightPlanWasAdded flightPlanWasAdded = new FlightPlanWasAdded { CustomerId = customerId, MilesFlown = 25000 };
+            CustomerWasBilled customerWasBilled = new CustomerWasBilled() { CustomerId = customerId, DollarsPaid = 3000 };
+            await saga.Handle(flightPlanWasAdded, context);
+            await saga.Handle(customerWasBilled, context);
+
+            Assert.IsTrue(saga.Completed);
+            Assert.AreEqual(1, context.PublishedMessages.Length);
+        }
+
+        [Test]
+        public async Task ShouldNotMakeCustomersPreferredStatusToGoldWhenNotEnoughMilesHasBeenFlown()
+        {
+            var customerId = Guid.NewGuid();
+            FlightPlanWasAdded flightPlanWasAdded = new FlightPlanWasAdded { CustomerId = customerId, MilesFlown = 2500 };
+            CustomerWasBilled customerWasBilled = new CustomerWasBilled() { CustomerId = customerId, DollarsPaid = 3500 };
+            await saga.Handle(flightPlanWasAdded, context);
+            await saga.Handle(customerWasBilled, context);
+
+            Assert.IsFalse(saga.Completed);
+            Assert.AreEqual(0, context.PublishedMessages.Length);
+        }
+
+        [Test]
+        public async Task ShouldNotMakeCustomersPreferredStatusToGoldWhenNotEnoughDollarsHasBeenSpent()
+        {
+            var customerId = Guid.NewGuid();
+            FlightPlanWasAdded flightPlanWasAdded = new FlightPlanWasAdded { CustomerId = customerId, MilesFlown = 35000 };
+            CustomerWasBilled customerWasBilled = new CustomerWasBilled() { CustomerId = customerId, DollarsPaid = 1000 };
+            await saga.Handle(flightPlanWasAdded, context);
+            await saga.Handle(customerWasBilled, context);
+
+            Assert.IsFalse(saga.Completed);
+            Assert.AreEqual(0, context.PublishedMessages.Length);
+        }
+    }
+}
