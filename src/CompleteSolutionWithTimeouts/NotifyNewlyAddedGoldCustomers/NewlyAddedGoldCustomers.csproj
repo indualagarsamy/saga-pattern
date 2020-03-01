@@ -9,12 +9,11 @@
   <ItemGroup>
     <PackageReference Include="NServiceBus" Version="7.2.3" />
     <PackageReference Include="NServiceBus.Newtonsoft.Json" Version="2.1.0" />
-    <PackageReference Include="NServiceBus.Transport.Msmq" Version="1.0.0" />
     <PackageReference Include="NServicebus.Heartbeat" Version="3.*" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Messages\Events.csproj" />
+    <ProjectReference Include="..\Events\Events.csproj" />
   </ItemGroup>
 
 </Project>
