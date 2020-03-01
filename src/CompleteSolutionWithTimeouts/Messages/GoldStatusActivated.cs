@@ -1,7 +1,7 @@
 ﻿using System;
 using NServiceBus;
 
-namespace Messages
+namespace Events
 {
     public class GoldStatusActivated : IEvent
     {

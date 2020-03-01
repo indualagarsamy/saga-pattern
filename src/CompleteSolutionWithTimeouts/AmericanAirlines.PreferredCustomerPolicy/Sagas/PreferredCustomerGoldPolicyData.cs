@@ -3,7 +3,7 @@ using NServiceBus;
 
 namespace PreferredCustomerPolicy.Sagas
 {
-    public class PreferredCustomersGoldPolicyData : ContainSagaData
+    public class PreferredCustomerGoldPolicyData : ContainSagaData
     {
         public Guid CustomerId { get; set; }
         public int TotalMilesFlown { get; set; }

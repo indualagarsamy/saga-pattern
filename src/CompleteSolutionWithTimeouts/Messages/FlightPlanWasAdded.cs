@@ -1,9 +1,9 @@
 ﻿using System;
 using NServiceBus;
 
-namespace Messages
+namespace Events
 {
-    public class SegmentWasFlown : IEvent
+    public class FlightPlanWasAdded : IEvent
     {
         public Guid CustomerId { get; set; }
         public int MilesFlown { get; set; }
