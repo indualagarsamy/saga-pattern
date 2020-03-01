@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using NServiceBus;
-using Messages;
+using Events;
 
 namespace PreferredCustomerPolicy.Sagas
 {

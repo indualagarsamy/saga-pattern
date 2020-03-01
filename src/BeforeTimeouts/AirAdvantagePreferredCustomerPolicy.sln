@@ -5,11 +5,11 @@ VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PreferredCustomerPolicy", "AmericanAirlines.PreferredCustomerPolicy\PreferredCustomerPolicy.csproj", "{41F3046C-5956-477A-A80E-E5045BD8A448}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Messages", "Messages\Messages.csproj", "{A7E34B71-EE10-4C1A-9E19-1D6980A1D577}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Events", "Messages\Events.csproj", "{A7E34B71-EE10-4C1A-9E19-1D6980A1D577}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NewlyAddedGoldCustomers", "NotifyNewlyAddedGoldCustomers\NewlyAddedGoldCustomers.csproj", "{7952F0C3-9092-41B5-BB91-961E4810B9AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlatformLauncher", "PlatformLauncher\PlatformLauncher.csproj", "{2391D1B9-088D-4752-A631-7D99A1B2C888}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlatformLauncher", "PlatformLauncher\PlatformLauncher.csproj", "{2391D1B9-088D-4752-A631-7D99A1B2C888}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
