@@ -328,3 +328,9 @@ ASALocalRun/
 
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
+
+# NServiceBus Platform Launcher and Learning Transport
+.learningtransport
+.logs
+.audit-db
+.db

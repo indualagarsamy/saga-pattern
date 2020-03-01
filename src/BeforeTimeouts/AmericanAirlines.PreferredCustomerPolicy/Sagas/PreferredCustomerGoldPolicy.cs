@@ -24,7 +24,6 @@ namespace PreferredCustomerPolicy.Sagas
             Console.WriteLine("New flight plan was received for {0}, miles = {1}", message.CustomerId, message.MilesFlown);
             Data.CustomerId = message.CustomerId;
             Data.TotalMilesFlown += message.MilesFlown;
-           
             if (CanCustomerBePromotedToGold(message.CustomerId))
             {
                 Console.WriteLine("Customer {0} is now promoted to Gold", message.CustomerId, message.MilesFlown);
@@ -33,7 +32,6 @@ namespace PreferredCustomerPolicy.Sagas
                 MarkAsComplete();
             }
         }
-        
 
         public async Task Handle(CustomerWasBilled message, IMessageHandlerContext context)
         {
