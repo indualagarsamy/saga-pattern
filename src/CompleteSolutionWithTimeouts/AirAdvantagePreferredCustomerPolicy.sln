@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlatformLauncher", "Platfor
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Events", "Events\Events.csproj", "{6957B981-A6BE-4C41-BD83-6A209E059002}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PreferredCustomerPolicy.Tests", "PreferredCustomerPolicy.Tests\PreferredCustomerPolicy.Tests.csproj", "{CCCED3CD-3C8B-4EE5-AC4A-ED2E37279558}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{6957B981-A6BE-4C41-BD83-6A209E059002}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6957B981-A6BE-4C41-BD83-6A209E059002}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6957B981-A6BE-4C41-BD83-6A209E059002}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCCED3CD-3C8B-4EE5-AC4A-ED2E37279558}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCCED3CD-3C8B-4EE5-AC4A-ED2E37279558}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCCED3CD-3C8B-4EE5-AC4A-ED2E37279558}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCCED3CD-3C8B-4EE5-AC4A-ED2E37279558}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

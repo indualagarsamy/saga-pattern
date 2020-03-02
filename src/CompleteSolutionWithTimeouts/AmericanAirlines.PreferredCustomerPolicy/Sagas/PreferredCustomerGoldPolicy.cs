@@ -6,7 +6,7 @@ using Events;
 namespace PreferredCustomerPolicy.Sagas
 {
 
-    class PreferredCustomerGoldPolicy : Saga<PreferredCustomerGoldPolicyData>,
+    public class PreferredCustomerGoldPolicy : Saga<PreferredCustomerGoldPolicyData>,
         IAmStartedByMessages<FlightPlanWasAdded>,
         IAmStartedByMessages<CustomerWasBilled>,
         IHandleTimeouts<CalendarYearHasStarted>
@@ -57,6 +57,7 @@ namespace PreferredCustomerPolicy.Sagas
         {
             await context.Publish(new GoldStatusActivated() { CustomerId = Data.CustomerId }).ConfigureAwait(false);
             Console.WriteLine("Publishing GoldStatusactivated event");
+            MarkAsComplete();
         }
     }
 
