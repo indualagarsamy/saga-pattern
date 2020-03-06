@@ -13,7 +13,8 @@ static class Program
         var endpointConfiguration = new EndpointConfiguration("NotifyNewlyAddedGoldCustomers");
 
         endpointConfiguration.UseSerialization<NewtonsoftSerializer>();
-        endpointConfiguration.Recoverability().Delayed(c => c.NumberOfRetries(0));
+        var recoverability = endpointConfiguration.Recoverability();
+        recoverability.Delayed(c => c.NumberOfRetries(0));
 
         endpointConfiguration.UseTransport<LearningTransport>();
         endpointConfiguration.UsePersistence<InMemoryPersistence>();
@@ -25,7 +26,8 @@ static class Program
         endpointConfiguration.SendHeartbeatTo("Particular.ServiceControl");
 
         // start the endpoint
-        var endpointInstance = await Endpoint.Start(endpointConfiguration).ConfigureAwait(false);
+        var endpointInstance = await Endpoint.Start(endpointConfiguration)
+            .ConfigureAwait(false);
 
         Console.WriteLine("Press ENTER to exit");
 
@@ -40,7 +42,6 @@ static class Program
             }
         }
 
-        ;
         await endpointInstance.Stop()
             .ConfigureAwait(false);
     }
