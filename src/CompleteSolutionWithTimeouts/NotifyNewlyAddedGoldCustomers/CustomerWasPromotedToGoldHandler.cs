@@ -3,14 +3,12 @@ using System.Threading.Tasks;
 using Events;
 using NServiceBus;
 
-namespace NotifyNewlyAddedGoldCustomers
+class CustomerWasPromotedToGoldHandler :
+    IHandleMessages<CustomerWasPromotedToGold>
 {
-    class CustomerWasPromotedToGoldHandler : IHandleMessages<CustomerWasPromotedToGold>
+    public Task Handle(CustomerWasPromotedToGold message, IMessageHandlerContext context)
     {
-        public Task Handle(CustomerWasPromotedToGold message, IMessageHandlerContext context)
-        {
-            Console.WriteLine("Notify the customer about gold status");
-            return Task.CompletedTask;
-        }
+        Console.WriteLine("Notify the customer about gold status");
+        return Task.CompletedTask;
     }
 }

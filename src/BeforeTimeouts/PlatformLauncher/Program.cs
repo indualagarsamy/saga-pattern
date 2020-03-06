@@ -1,13 +1,10 @@
 ﻿using System;
 
-namespace PlatformLauncher
+static class Program
 {
-    class Program
+    static void Main()
     {
-        static void Main(string[] args)
-        {
-            Console.Title = "Platform Launcher";
-            Particular.PlatformLauncher.Launch();
-        }
+        Console.Title = "Platform Launcher";
+        Particular.PlatformLauncher.Launch();
     }
 }

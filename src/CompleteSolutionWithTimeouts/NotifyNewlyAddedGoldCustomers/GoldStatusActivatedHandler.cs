@@ -3,14 +3,12 @@ using System.Threading.Tasks;
 using NServiceBus;
 using Events;
 
-namespace NewlyAddedGoldCustomers
+class GoldStatusActivatedHandler :
+    IHandleMessages<GoldStatusActivated>
 {
-    class GoldStatusActivatedHandler : IHandleMessages<GoldStatusActivated>
+    public Task Handle(GoldStatusActivated message, IMessageHandlerContext context)
     {
-        public Task Handle(GoldStatusActivated message, IMessageHandlerContext context)
-        {
-            Console.WriteLine("Customer Gold Status is now active.");
-            return Task.CompletedTask;
-        }
+        Console.WriteLine("Customer Gold Status is now active.");
+        return Task.CompletedTask;
     }
 }

@@ -3,7 +3,8 @@ using NServiceBus;
 
 namespace Events
 {
-    public class CustomerWasPromotedToGold : IEvent
+    public class CustomerWasPromotedToGold :
+        IEvent
     {
         public Guid CustomerId { get; set; }
     }

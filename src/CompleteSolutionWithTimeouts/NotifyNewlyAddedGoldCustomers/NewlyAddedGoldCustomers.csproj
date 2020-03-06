@@ -9,9 +9,6 @@
     <PackageReference Include="NServiceBus" Version="7.2.3" />
     <PackageReference Include="NServiceBus.Newtonsoft.Json" Version="2.1.0" />
     <PackageReference Include="NServicebus.Heartbeat" Version="3.*" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Events\Events.csproj" />
   </ItemGroup>
 
