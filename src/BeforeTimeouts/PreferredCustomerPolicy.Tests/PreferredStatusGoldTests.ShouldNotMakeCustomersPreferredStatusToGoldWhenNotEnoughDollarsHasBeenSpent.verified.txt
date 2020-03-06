@@ -1,0 +1,8 @@
+{
+  context: {},
+  Data: {
+    CustomerId: Guid_1,
+    TotalMilesFlown: 35000,
+    TotalDollarsPaid: 1000.0
+  }
+}

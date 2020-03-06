@@ -334,3 +334,6 @@ ASALocalRun/
 .logs
 .audit-db
 .db
+
+
+*.received.txt

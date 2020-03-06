@@ -1,0 +1,53 @@
+{
+  context: {
+    TimeoutMessages: [
+      {
+        Within: '00:00:15',
+        CalendarYearHasStarted: {},
+        Options: {
+          DeliveryDelay: '00:00:15',
+          Headers: {
+            SagaId: Guid_1,
+            IsSagaTimeoutMessage: 'True',
+            SagaType: 'PreferredCustomerGoldPolicy'
+          },
+          Extensions: {
+            NServiceBus.UnicastSendRouter+State: {
+              Option: 'RouteToAnyInstanceOfThisEndpoint'
+            }
+          }
+        }
+      }
+    ],
+    SentMessages: [
+      {
+        CalendarYearHasStarted: {},
+        Options: {
+          DeliveryDelay: '00:00:15',
+          Headers: {
+            SagaId: Guid_1,
+            IsSagaTimeoutMessage: 'True',
+            SagaType: 'PreferredCustomerGoldPolicy'
+          },
+          Extensions: {
+            NServiceBus.UnicastSendRouter+State: {
+              Option: 'RouteToAnyInstanceOfThisEndpoint'
+            }
+          }
+        }
+      }
+    ],
+    PublishedMessages: [
+      {
+        Events.GoldStatusActivated: {
+          CustomerId: Guid_2
+        }
+      }
+    ]
+  },
+  Data: {
+    CustomerId: Guid_2,
+    TotalMilesFlown: 25000,
+    TotalDollarsPaid: 3000.0
+  }
+}
