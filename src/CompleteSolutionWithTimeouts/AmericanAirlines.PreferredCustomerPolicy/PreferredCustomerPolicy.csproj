@@ -1,7 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <LangVersion>latest</LangVersion>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
@@ -11,9 +10,6 @@
     <PackageReference Include="NServiceBus.Newtonsoft.Json" Version="2.1.0" />
     <PackageReference Include="NServicebus.SagaAudit" Version="3.*" />
     <PackageReference Include="NServicebus.Heartbeat" Version="3.*" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Events\Events.csproj" />
   </ItemGroup>
 

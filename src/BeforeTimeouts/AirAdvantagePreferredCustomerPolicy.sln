@@ -11,7 +11,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlatformLauncher", "Platfor
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Events", "Events\Events.csproj", "{ABF56B59-AC28-430A-90A7-E815B62A68E5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PreferredCustomerPolicy.Tests", "PreferredCustomerPolicy.Tests\PreferredCustomerPolicy.Tests.csproj", "{85DD5839-0F7F-4A0B-9CD1-75E954D26F9E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PreferredCustomerPolicy.Tests", "PreferredCustomerPolicy.Tests\PreferredCustomerPolicy.Tests.csproj", "{85DD5839-0F7F-4A0B-9CD1-75E954D26F9E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DC775A8F-CE86-44D0-A1B5-6F1176D858EE}"
+	ProjectSection(SolutionItems) = preProject
+		..\Directory.Build.props = ..\Directory.Build.props
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
