@@ -3,6 +3,8 @@ using System.Threading.Tasks;
 using NUnit.Framework;
 using NServiceBus.Testing;
 using Events;
+using Verify.NServiceBus;
+using VerifyNUnit;
 
 [TestFixture]
 public class PreferredStatusGoldTests
@@ -39,9 +41,12 @@ public class PreferredStatusGoldTests
         await saga.Handle(customerWasBilled, context);
 
         // also test how long the timeout was supposed to be.
-        Assert.AreEqual(TimeSpan.FromSeconds(15), context.TimeoutMessages[0].Within);
-        Assert.IsFalse(saga.Completed);
-        Assert.AreEqual(0, context.PublishedMessages.Length);
+        await Verifier.Verify(
+            new
+            {
+                context,
+                saga.Data
+            });
     }
 
     [Test]
@@ -63,8 +68,12 @@ public class PreferredStatusGoldTests
 
         await saga.Timeout(new CalendarYearHasStarted(), context);
 
-        Assert.IsTrue(saga.Completed);
-        Assert.AreEqual(1, context.PublishedMessages.Length);
+        await Verifier.Verify(
+            new
+            {
+                context,
+                saga.Data
+            });
     }
 
     [Test]
@@ -84,8 +93,12 @@ public class PreferredStatusGoldTests
         await saga.Handle(flightPlanWasAdded, context);
         await saga.Handle(customerWasBilled, context);
 
-        Assert.IsFalse(saga.Completed);
-        Assert.AreEqual(0, context.PublishedMessages.Length);
+        await Verifier.Verify(
+            new
+            {
+                context,
+                saga.Data
+            });
     }
 
     [Test]
@@ -105,7 +118,16 @@ public class PreferredStatusGoldTests
         await saga.Handle(flightPlanWasAdded, context);
         await saga.Handle(customerWasBilled, context);
 
-        Assert.IsFalse(saga.Completed);
-        Assert.AreEqual(0, context.PublishedMessages.Length);
+        await Verifier.Verify(
+            new
+            {
+                context,
+                saga.Data
+            });
+    }
+
+    static PreferredStatusGoldTests()
+    {
+        VerifyNServiceBus.Enable();
     }
 }

@@ -1,0 +1,16 @@
+{
+  context: {
+    PublishedMessages: [
+      {
+        Events.CustomerWasPromotedToGold: {
+          CustomerId: Guid_1
+        }
+      }
+    ]
+  },
+  Data: {
+    CustomerId: Guid_1,
+    TotalMilesFlown: 25000,
+    TotalDollarsPaid: 3000.0
+  }
+}
